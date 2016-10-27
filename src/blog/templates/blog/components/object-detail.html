@@ -1,0 +1,16 @@
+{% if not list_view %}
+<h1>{{ object.title }} </h1>
+<br/><small>{{ object.timestamp|date:"D d M Y f a" }}</small>
+{{ object.content }}
+
+{% else %}
+
+<p class='bold'><a class='{% cycle "bold" "" %}' href='/blog/{{ object.id }}'>{{ object.title }}</a> <small>{{ object.timestamp|date:"D d M Y f a" }}</small></p>
+    {% if object.content %}
+    <p>
+    {{ object.content }}
+    </p>
+
+    {% endif %}
+<hr/>
+{% endif %}

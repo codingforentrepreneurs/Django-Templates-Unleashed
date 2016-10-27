@@ -6,33 +6,17 @@
 
 
 {% block content %}
-    
 
-    <style>
-        .bold {
-            font-weight: bold;
-        }
-    </style>
 
     <h1>Hello World</h1>
 
+    <hr/>
 
+    
     {% for object in object_list %}
-    <li>
-        <a class='{% cycle "bold" "" %}' href='/blog/{{ object.id }}'>{{ object.title }}</a>
-       <!--  <a href='{% url "blog:detail" id=object.id %}'>{{ object.title }}</a>
-        <a href='{{ object.get_absolute_url }}'>{{ object.title }}</a> -->
-
-    </li>
+        {% include "blog/components/object-detail.html" with object=object list_view=True %}
     {% endfor %}
 
-
-    {{   array_list }}
-
-    {{ num }}
-
-
-    {{ boolean_value }}
 
 
 {% endblock content %}

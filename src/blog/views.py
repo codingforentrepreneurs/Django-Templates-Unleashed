@@ -64,7 +64,7 @@ def post_model_update_view(request, id=None):
 def post_model_detail_view(request, id=None):
     obj = get_object_or_404(PostModel, id=id)
     context = {
-        "object": obj,
+        "instance": obj,
     }
     template = "blog/detail-view.html"
     return render(request, template, context)

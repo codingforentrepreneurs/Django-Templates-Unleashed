@@ -1,8 +1,7 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-<h1>{{ object.title }} <small>{{ object.timestamp|date:"D d M Y f a" }}</small></h1>
 
-{{ object.content }}
+{% include "blog/components/object-detail.html" with object=instance %}
 
 {% endblock content %}
