@@ -21,7 +21,7 @@ def some_test_view(request):
         "today": datetime.datetime.now().today(),
         "object_list": some_list,
     }
-    template = 'blog/test-view.html'
+    template = 'blog/test-view3.html'
     return render(request, template, context)
 
 
