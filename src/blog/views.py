@@ -1,3 +1,4 @@
+import datetime
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
@@ -10,6 +11,19 @@ from .forms import PostModelForm
 from .models import PostModel
 
 #@login_required
+
+def some_test_view(request):
+
+    context = {
+        "viewTitle": "This is awesome Capt",
+        "abc": 300,
+        "addNum": 300,
+        "today": datetime.datetime.now().today(),
+    }
+    template = 'blog/test-view.html'
+    return render(request, template, context)
+
+
 def post_model_create_view(request):
     form = PostModelForm(request.POST or None)
     context = {

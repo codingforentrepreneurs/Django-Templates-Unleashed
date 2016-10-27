@@ -9,7 +9,7 @@
 </ul>
 {% endif %}
 
-<h1>{{ object.title }}</h1>
+<h1>{{ object.title }} <small>{{ object.timestamp|date:"D d M Y f a" }}</small></h1>
 
 
 {{ object.content }}
