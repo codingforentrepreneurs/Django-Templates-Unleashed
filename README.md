@@ -23,3 +23,5 @@ Team CFE
 [5 - Inheritance](../../tree/4e55f5339ab9a7102068980e9e8367ab9b4a3ade)
 
 [6 - Include with Variables](../../tree/d19982a5c6e9ce56a701144d40cc4e422cddfa81)
+
+[7 - Override App Templates](../../tree/fbaa3034463f24c4b6252c39c4e4459beceaa164)
