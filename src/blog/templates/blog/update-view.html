@@ -1,3 +1,6 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
 <h1>Update {{ object.title }}</h1>
 
 {{ form.instance.title }}
@@ -7,3 +10,4 @@
 
 <input type='submit' value='Create'>
 </form>
+{% endblock content %}

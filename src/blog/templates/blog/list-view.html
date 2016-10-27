@@ -1,37 +1,38 @@
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+{% extends "blog/base.html" %}
+
+
+{% block title %}Blog List View | {{ block.super }}{% endblock title %}
+
+
+
+{% block content %}
+    
+
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+
+    <h1>Hello World</h1>
+
+
+    {% for object in object_list %}
+    <li>
+        <a class='{% cycle "bold" "" %}' href='/blog/{{ object.id }}'>{{ object.title }}</a>
+       <!--  <a href='{% url "blog:detail" id=object.id %}'>{{ object.title }}</a>
+        <a href='{{ object.get_absolute_url }}'>{{ object.title }}</a> -->
+
+    </li>
     {% endfor %}
-</ul>
-{% endif %}
-
-<style>
-    .bold {
-        font-weight: bold;
-    }
-</style>
 
 
+    {{   array_list }}
 
-{% include "blog/search-blog.html" %}
-
-<h1>Hello World</h1>
-
-
-{% for object in object_list %}
-<li>
-    <a class='{% cycle "bold" "" %}' href='/blog/{{ object.id }}'>{{ object.title }}</a>
-   <!--  <a href='{% url "blog:detail" id=object.id %}'>{{ object.title }}</a>
-    <a href='{{ object.get_absolute_url }}'>{{ object.title }}</a> -->
-
-</li>
-{% endfor %}
+    {{ num }}
 
 
-{{   array_list }}
-
-{{ num }}
+    {{ boolean_value }}
 
 
-{{ boolean_value }}
+{% endblock content %}

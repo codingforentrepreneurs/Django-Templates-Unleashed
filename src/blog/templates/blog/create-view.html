@@ -1,17 +1,13 @@
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+{% extends "blog/base.html" %}
 
-
+{% block title %}Create New Post | {{ block.super }} {% endblock title %}
+{% block content %}
 <h1>Create new Post</h1>
 
-
 <form method='POST' action='.'>{% csrf_token %}
-{{ abc.as_p }}
+{{ form.as_p }}
 
 <input type='submit' value='Create'>
 </form>
+
+{% endblock content %}

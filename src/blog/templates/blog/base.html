@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}My Project Title{% endblock title %}</title>
+</head>
+
+
+
+<body>
+
+{% include "blog/components/message.html" %}
+{% include "blog/components/search.html" %}
+
+
+{% block content %}
+{% endblock content %}
+
+</body>
+
+
+
+</html>

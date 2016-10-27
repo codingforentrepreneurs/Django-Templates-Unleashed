@@ -1,15 +1,8 @@
-{% include "blog/search-blog.html" %}
+{% extends "blog/base.html" %}
 
-
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-
+{% block content %}
 <h1>{{ object.title }} <small>{{ object.timestamp|date:"D d M Y f a" }}</small></h1>
 
-
 {{ object.content }}
+
+{% endblock content %}
