@@ -7,3 +7,38 @@
 
 
 {{ today|date:"D d M Y f a" }}
+
+<style>
+    .bold {
+        font-weight: bold;
+    }
+</style>
+
+<ul>
+{% for obj in object_list %}
+    {% for obj in object_list %}
+    <li class='{% cycle "" "" "" "" "bold" %}'> {{ forloop.counter }} {{ obj }}</li>
+    {% endfor %}
+{% endfor %}
+</ul>
+
+
+
+
+
+<ul>
+{% for obj in object_list %}
+<li {% if forloop.counter|add:1|divisibleby:2 %}style='font-weight:bold;'{% endif %}> {{ obj }}</li>
+{% endfor %}
+
+</ul>
+
+
+
+
+<ul>
+{% for obj in object_list %}
+<li {% if forloop.first %}style='font-weight:bold;'{% endif %}> {{ obj }}</li>
+{% endfor %}
+
+</ul>

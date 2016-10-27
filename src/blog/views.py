@@ -13,12 +13,13 @@ from .models import PostModel
 #@login_required
 
 def some_test_view(request):
-
+    some_list = ['abc', 123, 'item4', 'another']
     context = {
         "viewTitle": "This is awesome Capt",
         "abc": 300,
         "addNum": 300,
         "today": datetime.datetime.now().today(),
+        "object_list": some_list,
     }
     template = 'blog/test-view.html'
     return render(request, template, context)
